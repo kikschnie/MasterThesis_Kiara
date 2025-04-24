@@ -79,7 +79,7 @@ Include:
 
     └── 01_data_cleaning_and_preprocessing.ipynb
     
-    └── 02_exploratory_analysis.ipynb
+    └── 02_variable_preparation_and_analysis.ipynb
     
     └── 03_difference_in_differences.ipynb
     
@@ -92,5 +92,7 @@ Include:
     └── Sentiment distribution plots, Q-Q plots, etc.
     
 📄 README.md
+
+📄 Data_PreProcessing_Cleaning
 
 📄 requirements.txt
