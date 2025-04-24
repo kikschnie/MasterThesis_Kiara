@@ -1,0 +1,91 @@
+**Structured Overview of Data Cleaning and Preprocessing Steps**
+
+Start Point:
+
+Four raw datasets extracted from Reddit:
+	•	2 post datasets (one each for treatment and control groups)
+	•	2 comment datasets (one each for treatment and control groups)
+
+Step 1: Initial Parameter Filtering and Timestamp Conversion
+	•	Objective: Reduce file size and enhance readability.
+	•	Actions:
+	•	Removed unnecessary parameters (irrelevant for analysis).
+	•	Converted Unix timestamps (created_utc, author_created_utc) to human-readable datetime formats.
+
+Step 2: Comment-Tree Reconstruction and Labeling
+	•	Objective: Restore hierarchical relationships between posts and comments, facilitate identification of data sources.
+	•	Actions:
+	•	Reinstated hierarchical comment-tree structure.
+	•	Added clear labels:
+	•	data_type: "post" or "comment"
+	•	treatment: 0 (control), 1 (treatment)
+	•	period: 0 (pre-filter implementation), 1 (post-filter implementation)
+	•	Added clear prefixes for parameter sources:
+	•	Comment parameters prefixed by "comment_"
+	•	Post parameters prefixed by "post_"
+
+Step 3: Merging Treatment and Control Datasets
+	•	Objective: Facilitate unified analysis of all relevant data.
+	•	Actions:
+	•	Merged the two post and two comment datasets into one comprehensive file.
+
+End point: A single merged dataset for further preprocessing.
+
+Step 4: Filtering Mixed Comment Trees and Cross-Period Comments
+	•	Objective: Ensure temporal integrity of data aligned with observation periods.
+	•	Actions:
+	•	Hard limit approach:
+	•	Posts with >15% comments falling outside their respective observation periods or cutoff were excluded entirely.
+	•	Posts with ≤15% comments falling outside observation periods had those comments excluded, but the remaining valid comments were retained.
+
+Step 5: Removal of Deleted, Removed, and Moderator Comments
+	•	Objective: Ensure analytical validity by excluding non-discussion content.
+	•	Actions:
+	•	Filtered out:
+	•	Comments marked as deleted.
+	•	Comments removed by moderators.
+	•	Posts that, after this cleaning, resulted in having zero comments remaining.
+
+Step 6: Creation of Author Age Variable
+	•	Objective: Provide a robust control variable for analysis.
+	•	Actions:
+	•	Calculated author_age as the difference (in days) between the comment timestamp (created_utc) and the author account creation date (author_created_utc).
+
+Step 7: Handling Missing and Duplicate Data
+	•	Objective: Address incomplete and redundant data entries.
+	•	Actions:
+	•	Produced detailed overview of missing values across all parameters.
+	•	Implemented averages for missing author_created_utc values (2.9% of comments).
+	•	Note: Future researchers should adapt this step according to the specifics of their own datasets.
+	•	Checked and removed duplicates if any.
+
+Step 8: Final Parameter Reduction
+	•	Objective: Retain only essential analytical parameters.
+	•	Actions:
+	•	Removed parameters no longer needed for analysis:
+	•	Redundant timestamps (author_created_utc, etc.)
+	•	Variables related to intermediate cleaning steps (cutoff_estimate, percentage_pre, percentage_post, tree_type)
+	•	Administrative metadata (post_removed_by, comment_distinguished)
+	•	Combined equivalent timestamps (e.g., comment_created_utc and post_created_utc).
+
+End point: A fully cleaned and analytically relevant dataset.
+
+Step 9: Dataset Preparation for Analysis
+	•	Objective: Separate datasets tailored for specific analyses.
+	•	Actions:
+	•	Split final dataset into two specialized subsets:
+	•	Subset A: For sentiment analysis and affective polarization regressions.
+	•	Subset B: For user engagement regressions.
+
+Overview of Datasets and Steps taken
+
+Step & Description                              / Input File(s)                 / Output File(s)	                / Purpose
+1	Initial filtering & timestamp conversion  /	Raw Reddit datasets	          / Reduced parameter files	        / Size reduction, readability
+2	Comment-tree reconstruction & labeling  	/ Reduced parameter files	      / Hierarchical labeled files	    / Data source identification
+3	Merging control & treatment datasets	    / Hierarchical labeled files	  / Merged dataset	                / Unified analysis
+4	Filtering mixed comment trees	            / Merged dataset	              / Temporally valid dataset	      / Ensure temporal integrity
+5	Removal of deleted & moderator comments  	/ Temporally valid dataset	    / Cleaned discussion dataset	    / Valid content only
+6	Creation of author age control variable  	/ Cleaned discussion dataset	  / Dataset with author age	        / Analytical robustness
+7	Handling missing & duplicate data      	  / Dataset with author age	      / Complete dataset	              / Completeness & uniqueness
+8	Final parameter reduction                	/ Complete dataset	            / Analytically relevant dataset	  / Analytical efficiency & clarity
+9	Splitting datasets for specific analyses	/ Analytically relevant dataset /	Sentiment & engagement datasets	/ Specialized analyses
