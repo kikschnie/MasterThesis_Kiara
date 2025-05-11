@@ -74,15 +74,15 @@ Step 8: Final Parameter Reduction
 
 Output: A fully cleaned and analytically relevant dataset.
 
-Step 9: Dataset Preparation for Analysis
+Process Step 2: Dataset Preparation for Analysis
 	•	Objective: Separate datasets tailored for specific analyses.
 	•	Actions:
-		•	Split final dataset into two specialized subsets:
+		•	Duplicate final dataset into two specialized subsets:
 		•	Subset A: For sentiment analysis and affective polarization regressions.
 		•	Subset B: For user engagement regressions.
 Output: File A, File B for further Sentiment and User Engagement Regressions
 
-Step 10: Creation of Dependent Variables, Correlations, Plots
+This includes: Creation of Dependent Variables, Correlations, Plots
 
 Subset A: Sentiment Analysis and Affective Polarization
 
@@ -119,7 +119,7 @@ Preparation Steps:
 
 Output: user engagement file 2b — ready for regression input
 
-Step 11: Building and Running Regressions
+Process Step 3: Building and Running Regressions
 
 
 
