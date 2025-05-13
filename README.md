@@ -79,9 +79,11 @@ Include:
 
     └── 01_data_cleaning_and_preprocessing.ipynb
     
-    └── 02_variable_preparation_and_analysis.ipynb
+    └── 02_sentiment_analysis.ipynb
     
-    └── 03_difference_in_differences.ipynb
+    └── 03_user_engagement.ipynb
+
+    └── 04_difference_in_differences.ipynb
     
 📂 /results
 
