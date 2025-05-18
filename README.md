@@ -85,16 +85,14 @@ Include:
 
     └── 04_difference_in_differences.ipynb
     
-📂 /results
+📂 /results and figures
 
-    └── CSV and TXT outputs from models
+    └── CSV and TXT outputs from regression models
+
+    └── Distribution and parallel trend plots, Q-Q plots, etc.
     
-📂 /figures
-
-    └── Sentiment distribution plots, Q-Q plots, etc.
+    └── Descriptive Statistics
     
 📄 README.md
 
 📄 Process Overview.md
-
-📄 requirements.txt
