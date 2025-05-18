@@ -7,119 +7,186 @@ Process Step 1: Data Cleaning and Preprocessing
 Start Point:
 
 Four raw datasets extracted from Reddit:
-	•	2 post datasets (one each for treatment and control groups)
-	•	2 comment datasets (one each for treatment and control groups)
+	• 3 post datasets (two for treatment and one for control group)
+	• 3 comment datasets (two for treatment and one for control group)
 
-Step 1: Initial Parameter Filtering and Timestamp Conversion
-	•	Objective: Reduce file size and enhance readability.
-	•	Actions:
-	•	Removed unnecessary parameters (irrelevant for analysis).
-	•	Converted Unix timestamps (created_utc, author_created_utc) to human-readable datetime formats.
+Step 1: Initial File merging, Observation Period adaption, and Timestamp Conversion
+	• Objective: Enhance readability, reduce size filesize and amount
+	• Actions:
+		• Merge files from 6 to 4
+		• Converted Unix timestamps (created_utc, author_created_utc) to human-readable datetime formats.
+		• Adapt files to observation period chosen for study
 
-Step 2: Comment-Tree Reconstruction and Labeling
-	•	Objective: Restore hierarchical relationships between posts and comments, facilitate identification of data sources.
-	•	Actions:
-	•	Reinstated hierarchical comment-tree structure.
-	•	Added clear labels:
-	•	data_type: "post" or "comment"
-	•	treatment: 0 (control), 1 (treatment)
-	•	period: 0 (pre-filter implementation), 1 (post-filter implementation)
-	•	Added clear prefixes for parameter sources:
-	•	Comment parameters prefixed by "comment_"
-	•	Post parameters prefixed by "post_"
+Step 2: Initial Parameter Filtering
+	• Objective: Reduce file size and enhance readability.
+	• Actions:
+		• Removed unnecessary parameters (irrelevant for analysis).
 
-Step 3: Merging Treatment and Control Datasets
-	•	Objective: Facilitate unified analysis of all relevant data.
-	•	Actions:
-	•	Merged the two post and two comment datasets into one comprehensive file.
+Step 3: Comment-Tree Reconstruction and Labeling
+	• Objective: Restore hierarchical relationships between posts and comments, facilitate identification of data sources.
+	• Actions:
+		• Reinstated hierarchical comment-tree structure.
+		• Added clear labels:
+		• data_type: "post" or "comment"
+		• treatment: 0 (control), 1 (treatment)
+		• period: 0 (pre-filter implementation), 1 (post-filter implementation)
+		• Added clear prefixes for parameter sources:
+		• Comment parameters prefixed by "comment_"
+		• Post parameters prefixed by "post_"
+
+Step 4: Merging Treatment and Control Datasets
+	• Objective: Facilitate unified analysis of all relevant data.
+	• Actions:
+		• Merged the two post and two comment datasets into one comprehensive file.
 
 End point: A single merged dataset for further preprocessing.
 
-Step 4: Filtering Mixed Comment Trees and Cross-Period Comments
-	•	Objective: Ensure temporal integrity of data aligned with observation periods.
-	•	Actions:
-	•	Hard limit approach:
-	•	Posts with >15% comments falling outside their respective observation periods or cutoff were excluded entirely.
-	•	Posts with ≤15% comments falling outside observation periods had those comments excluded, but the remaining valid comments were retained.
+Step 5: Filtering Mixed Comment Trees and Cross-Period Comments
+	• Objective: Ensure temporal integrity of data aligned with observation periods.
+	• Actions:
+		• Hard limit approach:
+			• Posts with >15% comments falling outside their respective observation periods or cutoff were excluded entirely.
+			• Posts with ≤15% comments falling outside observation periods had those comments excluded, but the remaining valid comments were retained.
 
-Step 5: Removal of Deleted, Removed, and Moderator Comments
-	•	Objective: Ensure analytical validity by excluding non-discussion content.
-	•	Actions:
-	•	Filtered out:
-	•	Comments marked as deleted.
-	•	Comments removed by moderators.
-	•	Posts that, after this cleaning, resulted in having zero comments remaining.
+Step 6: Removal of Deleted, Removed, and Moderator Comments
+	• Objective: Ensure analytical validity by excluding non-discussion content.
+	• Actions:
+		• Filtered out:
+			• Comments marked as deleted.
+			• Comments removed by moderators.
+			• Posts that, after this cleaning, resulted in having zero comments remaining.
 
-Step 6: Creation of Author Age Variable
-	•	Objective: Provide a robust control variable for analysis.
-	•	Actions:
-	•	Calculated author_age as the difference (in days) between the comment timestamp (created_utc) and the author account creation date (author_created_utc).
+Step 7: Creation of Author Age Variable
+	• Objective: Provide a robust control variable for analysis.
+	• Actions:
+		• Calculated author_age as the difference (in days) between the comment timestamp (created_utc) and the author account creation date (author_created_utc).
 
-Step 7: Handling Missing and Duplicate Data
-	•	Objective: Address incomplete and redundant data entries.
-	•	Actions:
-	•	Produced detailed overview of missing values across all parameters.
-	•	Implemented averages for missing author_created_utc values (2.9% of comments).
-	•	Note: Future researchers should adapt this step according to the specifics of their own datasets.
-	•	Checked and removed duplicates if any.
+Step 8: Handling Missing and Duplicate Data
+	• Objective: Address incomplete and redundant data entries.
+	• Actions:
+		• Produced detailed overview of missing values across all parameters.
+		• Implemented averages for missing author_created_utc values (2.9% of comments).
+		• Note: Future researchers should adapt this step according to the specifics of their own datasets.
+		• Checked and removed duplicates if any.
 
-Step 8: Final Parameter Reduction
-	•	Objective: Retain only essential analytical parameters.
-	•	Actions:
-	•	Removed parameters no longer needed for analysis:
-	•	Redundant timestamps (author_created_utc, etc.)
-	•	Variables related to intermediate cleaning steps (cutoff_estimate, percentage_pre, percentage_post, tree_type)
-	•	Administrative metadata (post_removed_by, comment_distinguished)
-	•	Combined equivalent timestamps (e.g., comment_created_utc and post_created_utc).
+Step 9: Final Parameter Reduction
+	• Objective: Retain only essential analytical parameters.
+	• Actions:
+		• Removed parameters no longer needed for analysis:
+		• Redundant timestamps (author_created_utc, etc.)
+		• Variables related to intermediate cleaning steps (cutoff_estimate, percentage_pre, percentage_post, tree_type)
+		• Administrative metadata (post_removed_by, comment_distinguished)
+		• Combined equivalent timestamps (e.g., comment_created_utc and post_created_utc).
 
-Output: A fully cleaned and analytically relevant dataset.
+	Output: A fully cleaned and analytically relevant dataset.
 
 Process Step 2: Dataset Preparation for Analysis
-	•	Objective: Separate datasets tailored for specific analyses.
-	•	Actions:
-		•	Duplicate final dataset into two specialized subsets:
-		•	Subset A: For sentiment analysis and affective polarization regressions.
-		•	Subset B: For user engagement regressions.
-Output: File A, File B for further Sentiment and User Engagement Regressions
+	• Objective: Separate datasets tailored for specific analyses.
+	• Actions:
+		• Duplicate final dataset into two specialized subsets:
+		• Subset A: For sentiment analysis and affective polarization regressions.
+		• Subset B: For user engagement regressions.
+	Output: File A, File B for further Sentiment and User Engagement Regressions
 
 This includes: Creation of Dependent Variables, Correlations, Plots
 
 Subset A: Sentiment Analysis and Affective Polarization
 
 Preparation Steps:
-	•	Preprocessing of text data:
-	•	Replace HTML entities
-	•	Remove URLs and user mentions
-	•	Remove control characters (emojis retained)
-	•	Normalize whitespace
-	•	Sentiment analysis using VADER:
-	•	Extracted: avg_compound_score, sentiment_variance, avg_neg_score, avg_neu_score, avg_pos_score
-	•	Linguistic analysis:
-	•	Computed avg_us_count and avg_them_count for in-group/out-group reference
-	•	Aggregation:
-	•	All metrics aggregated at the post/thread level
-	•	Diagnostics:
-	•	Parallel trends plots
-	•	Correlation matrices, Cronbach’s alpha, PCA loadings
-	•	Distribution plots (logged and unlogged)
+	• Preprocessing of text data:
+		• Replace HTML entities
+		• Remove URLs and user mentions
+		• Remove control characters (emojis retained)
+		• Normalize whitespace
+	• Sentiment analysis using VADER:
+		• Extracted: avg_compound_score, sentiment_variance, avg_neg_score, avg_neu_score, avg_pos_score
+	• Linguistic analysis:
+	• Computed avg_us_count and avg_them_count for in-group/out-group reference
+	• Aggregation:
+		• All metrics aggregated at the post/thread level
+	• Diagnostics:
+		• Parallel trends plots
+		• Correlation matrices, Cronbach’s alpha, PCA loadings
+		• Distribution plots (logged and unlogged)
 
-Output: sentiment analysis file 2a — ready for regression input
+	Output: sentiment analysis file 2a — ready for regression input
 
 Subset B: User Engagement Analysis
 
 Preparation Steps:
-	•	Constructed thread-level engagement variables:
-	•	comment_count, avg_word_count, child_comment_depth, unique_contributors
-	•	Aggregation:
-	•	All metrics aggregated at the post/thread level
-	•	Diagnostics:
-	•	Parallel trends plots
-	•	Correlation matrices, Cronbach’s alpha, PCA loadings
-	•	Distribution plots (logged and unlogged)
+	• Constructed thread-level engagement variables:
+		• comment_count, avg_word_count, child_comment_depth, unique_contributors
+	• Aggregation:
+		• All metrics aggregated at the post/thread level
+	• Diagnostics:
+		• Parallel trends plots
+		• Correlation matrices, Cronbach’s alpha, PCA loadings
+		• Distribution plots (logged and unlogged)
 
 Output: user engagement file 2b — ready for regression input
 
-Process Step 3: Building and Running Regressions
+Process Step 3: Running Regressions
+	• Starting Point:
+		• File 2a: Sentiment and affective polarization metrics (avg_compound_score, sentiment_variance, log_avg_us_count, log_avg_them_count)
+		• File 2b: User engagement metrics (log_actual_comment_count, log_avg_childcom_depth, log_unique_authors, log_avg_word_count)
+
+	Step 1: Basic DiD Model Implementation (Model 1)
+
+	• Objective: Establish baseline treatment effects without controls.
+	• Actions:
+		• Configuration of analysis parameters for both engagement and polarization datasets
+		• Formula: dependent_var ~ treatment + Period + treatment:Period
+		• Implementation of robust standard errors (HC3)
+		• Statistical significance assessed with conventional thresholds (*p<0.1, **p<0.05, ***p<0.01)
+	Output: CSV summary tables and detailed model statistics for each dependent variable
+
+	Step 2: DiD with Subreddit Fixed Effects (Model 2)
+
+	• Objective: Control for time-invariant subreddit characteristics.
+	• Actions:
+		• Formula: dependent_var ~ Period + treatment:Period + C(treatment)
+		• Implementation with robust standard errors (HC3)
+		• Assessment of R² improvement over basic model
+	Output: Model summaries with treatment effect estimates and statistical significance
+
+	Step 3: DiD with Daily Fixed Effects (Model 3)
+
+	• Objective: Control for platform-wide or temporal influences.
+	• Actions:
+		• Creation of date-based fixed effects from timestamps
+		• Formula: dependent_var ~ treatment:Period + C(treatment) + C(date)
+		• Implementation with robust standard errors (HC3)
+		• Comparison of explained variance to previous models
+	Output: Model statistics with time-controlled treatment effects
+
+	Step 4: DiD with Author Age Control (Model 4)
+
+	• Objective: Account for user experience effects.
+	• Actions:
+		• Addition of log-transformed average account age as control
+		• Formula: dependent_var ~ treatment:Period + C(treatment) + C(date) + log_avg_account_age
+		• Assessment of control variable significance and model improvement
+	Output: Model summaries with author-age-controlled treatment effects
+
+	Step 5: DiD with Post Score Control (Model 5)
+
+	• Objective: Account for post visibility and popularity effects.
+	• Actions:
+		• Addition of log-transformed post score as control
+		• Formula: dependent_var ~ treatment:Period + C(treatment) + C(date) + log_avg_account_age + log_post_score
+		• Final assessment of fully controlled treatment effects
+	Output: Complete model statistics for final specifications
+
+	Final Processing: Results Compilation
+
+	• Objective: Prepare results for presentation and interpretation.
+	• Actions:
+		• Extraction of key statistics: treatment effects, standard errors, p-values, R²
+		• Addition of significance stars for visual interpretation
+		• Organization of outputs in hierarchical directory structure
+	Output: Comprehensive result tables ready for thesis analysis
+
+End Point: A complete set of regression outputs with progressive control implementations, ready for interpretation and discussion in the thesis.
 
 
 
