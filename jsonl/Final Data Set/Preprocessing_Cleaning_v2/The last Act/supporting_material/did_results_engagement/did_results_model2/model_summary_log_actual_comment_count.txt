@@ -1,0 +1,27 @@
+                               OLS Regression Results                               
+====================================================================================
+Dep. Variable:     log_actual_comment_count   R-squared:                       0.002
+Model:                                  OLS   Adj. R-squared:                 -0.002
+Method:                       Least Squares   F-statistic:                    0.5276
+Date:                      Tue, 25 Mar 2025   Prob (F-statistic):              0.663
+Time:                              19:38:13   Log-Likelihood:                -1243.7
+No. Observations:                       637   AIC:                             2495.
+Df Residuals:                           633   BIC:                             2513.
+Df Model:                                 3                                         
+Covariance Type:                        HC3                                         
+=====================================================================================
+                        coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+Intercept             4.2506      0.107     39.608      0.000       4.040       4.461
+C(treatment)[T.1]     0.1237      0.192      0.643      0.520      -0.254       0.501
+Period                0.0538      0.167      0.323      0.747      -0.273       0.380
+treatment:Period      0.0766      0.294      0.261      0.794      -0.499       0.652
+==============================================================================
+Omnibus:                       52.008   Durbin-Watson:                   2.135
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               60.955
+Skew:                          -0.739   Prob(JB):                     5.80e-14
+Kurtosis:                       2.662   Cond. No.                         5.88
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

@@ -1,0 +1,17 @@
+Variable,N,Mean,SD,Group,Period
+sentiment_variance,132,0.30185003899438007,0.11846739599847651,Treatment,Pre-Filter
+avg_compound_score,132,0.07375759177290711,0.2608739644152157,Treatment,Pre-Filter
+log_avg_us_count,132,0.4370067564638202,0.25815341936823366,Treatment,Pre-Filter
+log_avg_them_count,132,0.6604467588633929,0.28430099053762553,Treatment,Pre-Filter
+sentiment_variance,83,0.28857588872113277,0.11489711150853694,Treatment,Post-Filter
+avg_compound_score,83,0.10399750299769264,0.29227327903616246,Treatment,Post-Filter
+log_avg_us_count,83,0.45553299060331176,0.2992361373209741,Treatment,Post-Filter
+log_avg_them_count,83,0.7635054712523739,0.3558536358965071,Treatment,Post-Filter
+sentiment_variance,259,0.2784439719817904,0.11756200252284638,Control,Pre-Filter
+avg_compound_score,259,0.03247350047242861,0.24876737282968342,Control,Pre-Filter
+log_avg_us_count,259,0.3713258657291109,0.29626130417626295,Control,Pre-Filter
+log_avg_them_count,259,0.6135313290083003,0.3270501835795131,Control,Pre-Filter
+sentiment_variance,163,0.2847403277830975,0.10517926489283519,Control,Post-Filter
+avg_compound_score,163,0.03117110925541451,0.24094368099430924,Control,Post-Filter
+log_avg_us_count,163,0.32454753430679206,0.1870874689380051,Control,Post-Filter
+log_avg_them_count,163,0.6278427789572257,0.28674462843037674,Control,Post-Filter

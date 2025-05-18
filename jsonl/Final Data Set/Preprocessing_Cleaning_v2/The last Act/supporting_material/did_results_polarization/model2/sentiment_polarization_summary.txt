@@ -1,0 +1,27 @@
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     sentiment_polarization   R-squared:                       0.003
+Model:                                OLS   Adj. R-squared:                 -0.002
+Method:                     Least Squares   F-statistic:                    0.5868
+Date:                    Wed, 26 Mar 2025   Prob (F-statistic):              0.624
+Time:                            07:19:18   Log-Likelihood:                -559.03
+No. Observations:                     637   AIC:                             1126.
+Df Residuals:                         633   BIC:                             1144.
+Df Model:                               3                                         
+Covariance Type:                      HC3                                         
+=====================================================================================
+                        coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+Intercept             1.6548      0.038     43.427      0.000       1.580       1.730
+C(treatment)[T.1]     0.0441      0.064      0.687      0.492      -0.082       0.170
+Period                0.0688      0.056      1.228      0.220      -0.041       0.179
+treatment:Period     -0.0463      0.101     -0.460      0.645      -0.243       0.151
+==============================================================================
+Omnibus:                      271.697   Durbin-Watson:                   1.987
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              807.585
+Skew:                          -2.196   Prob(JB):                    4.32e-176
+Kurtosis:                       6.339   Cond. No.                         5.88
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

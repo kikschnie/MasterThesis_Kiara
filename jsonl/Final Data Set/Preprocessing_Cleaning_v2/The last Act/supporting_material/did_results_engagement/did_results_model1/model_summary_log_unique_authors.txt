@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     log_unique_authors   R-squared:                       0.003
+Model:                            OLS   Adj. R-squared:                 -0.002
+Method:                 Least Squares   F-statistic:                    0.5985
+Date:                Tue, 25 Mar 2025   Prob (F-statistic):              0.616
+Time:                        19:38:13   Log-Likelihood:                -1121.9
+No. Observations:                 637   AIC:                             2252.
+Df Residuals:                     633   BIC:                             2270.
+Df Model:                           3                                         
+Covariance Type:                  HC3                                         
+=====================================================================================
+                        coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+Intercept             3.5770      0.088     40.492      0.000       3.404       3.750
+C(treatment)[T.1]     0.0852      0.159      0.536      0.592      -0.226       0.397
+Period                0.0623      0.136      0.459      0.647      -0.204       0.328
+treatment:Period      0.0914      0.246      0.372      0.710      -0.390       0.573
+==============================================================================
+Omnibus:                       44.440   Durbin-Watson:                   2.130
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               48.214
+Skew:                          -0.642   Prob(JB):                     3.39e-11
+Kurtosis:                       2.591   Cond. No.                         5.88
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

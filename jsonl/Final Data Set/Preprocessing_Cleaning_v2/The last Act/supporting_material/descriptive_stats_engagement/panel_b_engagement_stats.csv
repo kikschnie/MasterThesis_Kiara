@@ -1,0 +1,17 @@
+Variable,N,Mean,SD,Group,Period
+log_avg_word_count,132,4.146131054164899,0.395047325118547,Treatment,Pre-Filter
+log_unique_authors,132,3.6621482998027304,1.5112678280017922,Treatment,Pre-Filter
+log_avg_childcom_depth,132,1.0247993181508726,0.18315488398863,Treatment,Pre-Filter
+log_actual_comment_count,132,4.3743416880291885,1.8289088151736395,Treatment,Pre-Filter
+log_avg_word_count,83,4.207376535128134,0.34143695326435,Treatment,Post-Filter
+log_unique_authors,83,3.815840146917896,1.4194735660892601,Treatment,Post-Filter
+log_avg_childcom_depth,83,1.0372085716480124,0.18751777909204423,Treatment,Post-Filter
+log_actual_comment_count,83,4.504695026042467,1.6422018414099964,Treatment,Post-Filter
+log_avg_word_count,259,4.107606868461274,0.4407033240735703,Control,Pre-Filter
+log_unique_authors,259,3.5769630354988062,1.4188988722048057,Control,Pre-Filter
+log_avg_childcom_depth,259,1.141753329412388,0.24830799418317595,Control,Pre-Filter
+log_actual_comment_count,259,4.2506427974870515,1.7237727127666862,Control,Pre-Filter
+log_avg_word_count,163,4.036460837512926,0.3901919777608268,Control,Post-Filter
+log_unique_authors,163,3.6392486809830187,1.3130444953065592,Control,Post-Filter
+log_avg_childcom_depth,163,1.1419249758111485,0.21995265735478356,Control,Post-Filter
+log_actual_comment_count,163,4.3044087948964265,1.6208007080269438,Control,Post-Filter

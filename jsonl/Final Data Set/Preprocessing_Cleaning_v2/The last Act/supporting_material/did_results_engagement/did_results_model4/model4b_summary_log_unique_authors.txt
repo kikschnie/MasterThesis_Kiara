@@ -1,0 +1,68 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     log_unique_authors   R-squared:                       0.514
+Model:                            OLS   Adj. R-squared:                  0.479
+Method:                 Least Squares   F-statistic:                     9.786
+Date:                Tue, 25 Mar 2025   Prob (F-statistic):           6.53e-45
+Time:                        20:30:21   Log-Likelihood:                -893.27
+No. Observations:                 637   AIC:                             1873.
+Df Residuals:                     594   BIC:                             2064.
+Df Model:                          42                                         
+Covariance Type:                  HC3                                         
+=========================================================================================================
+                                            coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------
+Intercept                                -6.2486      1.868     -3.345      0.001      -9.909      -2.588
+C(treatment)[T.1]                         0.2694      0.114      2.360      0.018       0.046       0.493
+C(date)[T.datetime.date(2022, 7, 4)]     -0.3093      0.580     -0.534      0.594      -1.445       0.827
+C(date)[T.datetime.date(2022, 7, 5)]      0.7769      0.534      1.455      0.146      -0.270       1.823
+C(date)[T.datetime.date(2022, 7, 6)]      0.7702      0.520      1.481      0.138      -0.249       1.789
+C(date)[T.datetime.date(2022, 7, 7)]      1.0793      0.494      2.184      0.029       0.111       2.048
+C(date)[T.datetime.date(2022, 7, 8)]      0.9364      0.499      1.878      0.060      -0.041       1.914
+C(date)[T.datetime.date(2022, 7, 9)]      0.5025      0.550      0.914      0.361      -0.575       1.580
+C(date)[T.datetime.date(2022, 7, 10)]     0.7930      0.580      1.367      0.172      -0.344       1.930
+C(date)[T.datetime.date(2022, 7, 11)]     1.1022      0.509      2.164      0.030       0.104       2.100
+C(date)[T.datetime.date(2022, 7, 12)]     0.5291      0.524      1.009      0.313      -0.499       1.557
+C(date)[T.datetime.date(2022, 7, 13)]     0.5180      0.516      1.004      0.315      -0.493       1.529
+C(date)[T.datetime.date(2022, 7, 14)]     0.8917      0.498      1.790      0.073      -0.085       1.868
+C(date)[T.datetime.date(2022, 7, 15)]     0.7194      0.505      1.425      0.154      -0.270       1.709
+C(date)[T.datetime.date(2022, 7, 16)]     0.5918      0.537      1.103      0.270      -0.460       1.644
+C(date)[T.datetime.date(2022, 7, 17)]     0.9453      0.543      1.740      0.082      -0.120       2.010
+C(date)[T.datetime.date(2022, 7, 18)]     1.0823      0.520      2.080      0.037       0.063       2.102
+C(date)[T.datetime.date(2022, 7, 19)]     0.7441      0.536      1.388      0.165      -0.306       1.795
+C(date)[T.datetime.date(2022, 7, 20)]     0.8213      0.520      1.578      0.114      -0.199       1.841
+C(date)[T.datetime.date(2022, 7, 21)]     0.9467      0.525      1.802      0.072      -0.083       1.977
+C(date)[T.datetime.date(2022, 7, 22)]     0.5194      0.530      0.980      0.327      -0.519       1.558
+C(date)[T.datetime.date(2022, 7, 23)]     0.6666      0.694      0.960      0.337      -0.694       2.027
+C(date)[T.datetime.date(2022, 7, 24)]    -0.4399      0.723     -0.609      0.543      -1.856       0.976
+C(date)[T.datetime.date(2022, 7, 25)]     1.2195      0.537      2.272      0.023       0.168       2.271
+C(date)[T.datetime.date(2022, 7, 26)]     0.8205      0.518      1.584      0.113      -0.195       1.836
+C(date)[T.datetime.date(2022, 7, 27)]     0.7650      0.520      1.471      0.141      -0.255       1.785
+C(date)[T.datetime.date(2022, 7, 28)]     0.4485      0.543      0.825      0.409      -0.617       1.514
+C(date)[T.datetime.date(2022, 7, 29)]     0.6214      0.547      1.135      0.256      -0.452       1.694
+C(date)[T.datetime.date(2022, 7, 30)]     0.6340      0.596      1.064      0.287      -0.534       1.802
+C(date)[T.datetime.date(2022, 7, 31)]     0.7724      0.518      1.492      0.136      -0.243       1.787
+C(date)[T.datetime.date(2022, 8, 1)]      0.4303      0.543      0.792      0.428      -0.634       1.495
+C(date)[T.datetime.date(2022, 8, 2)]      0.7870      0.505      1.558      0.119      -0.203       1.777
+C(date)[T.datetime.date(2022, 8, 3)]      0.4098      0.520      0.789      0.430      -0.609       1.428
+C(date)[T.datetime.date(2022, 8, 4)]      0.7151      0.557      1.285      0.199      -0.376       1.806
+C(date)[T.datetime.date(2022, 8, 5)]      0.6234      0.607      1.027      0.304      -0.566       1.813
+C(date)[T.datetime.date(2022, 8, 6)]     -0.1408      0.642     -0.219      0.826      -1.400       1.118
+C(date)[T.datetime.date(2022, 8, 7)]      0.9024      0.550      1.642      0.101      -0.175       1.979
+C(date)[T.datetime.date(2022, 8, 8)]      0.9987      0.532      1.878      0.060      -0.044       2.041
+C(date)[T.datetime.date(2022, 8, 9)]     -0.0581      0.801     -0.073      0.942      -1.628       1.512
+treatment:Period                         -0.1835      0.205     -0.894      0.371      -0.585       0.219
+post_score                                0.0043      0.001      6.314      0.000       0.003       0.006
+post_upvote_ratio                        -0.0760      0.416     -0.183      0.855      -0.892       0.740
+log_avg_account_age                       1.1449      0.245      4.671      0.000       0.665       1.625
+==============================================================================
+Omnibus:                       77.629   Durbin-Watson:                   2.152
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              114.455
+Skew:                          -0.842   Prob(JB):                     1.40e-25
+Kurtosis:                       4.215   Cond. No.                     1.09e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 1.09e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.

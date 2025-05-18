@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     avg_compound_score   R-squared:                       0.011
+Model:                            OLS   Adj. R-squared:                  0.006
+Method:                 Least Squares   F-statistic:                     2.025
+Date:                Wed, 26 Mar 2025   Prob (F-statistic):              0.109
+Time:                        07:15:38   Log-Likelihood:                -32.409
+No. Observations:                 637   AIC:                             72.82
+Df Residuals:                     633   BIC:                             90.64
+Df Model:                           3                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept            0.0325      0.015      2.097      0.036       0.002       0.063
+treatment            0.0413      0.028      1.498      0.134      -0.013       0.095
+Period              -0.0013      0.024     -0.053      0.958      -0.049       0.047
+treatment:Period     0.0315      0.046      0.679      0.497      -0.060       0.123
+==============================================================================
+Omnibus:                       69.623   Durbin-Watson:                   1.985
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              369.469
+Skew:                           0.298   Prob(JB):                     5.90e-81
+Kurtosis:                       6.683   Cond. No.                         5.88
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

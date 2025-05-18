@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     sentiment_variance   R-squared:                       0.006
+Model:                            OLS   Adj. R-squared:                  0.001
+Method:                 Least Squares   F-statistic:                     1.158
+Date:                Wed, 26 Mar 2025   Prob (F-statistic):              0.325
+Time:                        07:15:38   Log-Likelihood:                 479.40
+No. Observations:                 637   AIC:                            -950.8
+Df Residuals:                     633   BIC:                            -933.0
+Df Model:                           3                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept            0.2784      0.007     38.044      0.000       0.264       0.293
+treatment            0.0234      0.013      1.846      0.065      -0.001       0.048
+Period               0.0063      0.011      0.570      0.568      -0.015       0.028
+treatment:Period    -0.0196      0.020     -0.991      0.322      -0.058       0.019
+==============================================================================
+Omnibus:                      113.324   Durbin-Watson:                   2.019
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              255.820
+Skew:                          -0.955   Prob(JB):                     2.82e-56
+Kurtosis:                       5.448   Cond. No.                         5.88
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

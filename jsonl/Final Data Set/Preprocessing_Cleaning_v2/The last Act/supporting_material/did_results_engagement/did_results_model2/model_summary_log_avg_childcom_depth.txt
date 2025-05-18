@@ -1,0 +1,27 @@
+                              OLS Regression Results                              
+==================================================================================
+Dep. Variable:     log_avg_childcom_depth   R-squared:                       0.055
+Model:                                OLS   Adj. R-squared:                  0.050
+Method:                     Least Squares   F-statistic:                     14.44
+Date:                    Tue, 25 Mar 2025   Prob (F-statistic):           4.13e-09
+Time:                            19:38:13   Log-Likelihood:                 58.659
+No. Observations:                     637   AIC:                            -109.3
+Df Residuals:                         633   BIC:                            -91.49
+Df Model:                               3                                         
+Covariance Type:                      HC3                                         
+=====================================================================================
+                        coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+Intercept             1.1418      0.015     73.857      0.000       1.111       1.172
+C(treatment)[T.1]    -0.1170      0.022     -5.256      0.000      -0.161      -0.073
+Period                0.0002      0.023      0.007      0.994      -0.045       0.046
+treatment:Period      0.0122      0.035      0.350      0.726      -0.056       0.081
+==============================================================================
+Omnibus:                       51.626   Durbin-Watson:                   1.975
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              152.786
+Skew:                           0.364   Prob(JB):                     6.65e-34
+Kurtosis:                       5.286   Cond. No.                         5.88
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
