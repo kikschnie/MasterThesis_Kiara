@@ -1,6 +1,6 @@
 This file will explain the specific steps taken from raw datasets to arrive at regression results
 
-Process Step 1: Data Cleaning and Preprocessing
+Process Step 1: Data Cleaning and Preprocessing -> Found in file 01_data_cleaning_and_preprocessing.ipynb
 
 **Structured Overview of Data Cleaning and Preprocessing Steps**
 
@@ -90,7 +90,7 @@ Process Step 2: Dataset Preparation for Analysis
 
 This includes: Creation of Dependent Variables, Correlations, Plots
 
-Subset A: Sentiment Analysis and Affective Polarization
+Subset A: Sentiment Analysis and Affective Polarization -> Found in file 02_sentiment_analysis.ipynb
 
 Preparation Steps:
 	• Preprocessing of text data:
@@ -111,7 +111,7 @@ Preparation Steps:
 
 	Output: sentiment analysis file 2a — ready for regression input
 
-Subset B: User Engagement Analysis
+Subset B: User Engagement Analysis -> Found in file 03_user_engagement.ipynb
 
 Preparation Steps:
 	• Constructed thread-level engagement variables:
