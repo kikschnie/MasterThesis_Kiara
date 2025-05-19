@@ -125,7 +125,7 @@ Preparation Steps:
 
 Output: user engagement file 2b — ready for regression input
 
-Process Step 3: Running Regressions
+Process Step 3: Running Regressions -> Found in file 04_DiD_Regression_Analysis.ipynb
 	• Starting Point:
 		• File 2a: Sentiment and affective polarization metrics (avg_compound_score, sentiment_variance, log_avg_us_count, log_avg_them_count)
 		• File 2b: User engagement metrics (log_actual_comment_count, log_avg_childcom_depth, log_unique_authors, log_avg_word_count)
