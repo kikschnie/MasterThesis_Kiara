@@ -73,15 +73,9 @@ Include:
 
 📂 /data
 
-    └── Merged and cleaned CSV files used for analysis (not included in repo for privacy)
+    └── Raw Data files
     
 📂 /notebooks
-
-    └── 01_data_cleaning_and_preprocessing.ipynb
-    
-    └── 02_sentiment_analysis.ipynb
-    
-    └── 03_user_engagement.ipynb
 
     └── 04_difference_in_differences.ipynb
     
