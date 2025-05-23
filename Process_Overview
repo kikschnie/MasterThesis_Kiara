@@ -181,24 +181,3 @@ Process Step 3: Running Regressions -> Found in file 04_DiD_Regression_Analysis.
 	Output: Comprehensive result tables ready for thesis analysis
 
 End Point: A complete set of regression outputs with progressive control implementations, ready for interpretation and discussion in the thesis.
-
-
-
-
-
-
-
-
-
-Overview of Datasets and Steps taken
-
-Step & Description                              / Input File(s)                 / Output File(s)	                / Purpose
-1	Initial filtering & timestamp conversion  /	Raw Reddit datasets	          / Reduced parameter files	        / Size reduction, readability
-2	Comment-tree reconstruction & labeling  	/ Reduced parameter files	      / Hierarchical labeled files	    / Data source identification
-3	Merging control & treatment datasets	    / Hierarchical labeled files	  / Merged dataset	                / Unified analysis
-4	Filtering mixed comment trees	            / Merged dataset	              / Temporally valid dataset	      / Ensure temporal integrity
-5	Removal of deleted & moderator comments  	/ Temporally valid dataset	    / Cleaned discussion dataset	    / Valid content only
-6	Creation of author age control variable  	/ Cleaned discussion dataset	  / Dataset with author age	        / Analytical robustness
-7	Handling missing & duplicate data      	  / Dataset with author age	      / Complete dataset	              / Completeness & uniqueness
-8	Final parameter reduction                	/ Complete dataset	            / Analytically relevant dataset	  / Analytical efficiency & clarity
-9	Splitting datasets for specific analyses	/ Analytically relevant dataset /	Sentiment & engagement datasets	/ Specialized analyses
