@@ -7,48 +7,42 @@ Process Step 1: Data Cleaning and Preprocessing -> Found in file 01_data_cleanin
 Start Point:
 
 Four raw datasets extracted from Reddit:
-	• 3 post datasets (two for treatment and one for control group)
-	• 3 comment datasets (two for treatment and one for control group)
+	• 2 post datasets (one for treatment and one for control group)
+	• 2 comment datasets (one for treatment and one for control group)
 
-Step 1: Initial File merging, Observation Period adaption, and Timestamp Conversion
-	• Objective: Enhance readability, reduce size filesize and amount
+Step 1: Initial Timestamp Conversion and Parameter Filtering
+	• Objective: Enhance readability, reduce filesize,
 	• Actions:
-		• Merge files from 6 to 4
 		• Converted Unix timestamps (created_utc, author_created_utc) to human-readable datetime formats.
-		• Adapt files to observation period chosen for study
-
-Step 2: Initial Parameter Filtering
-	• Objective: Reduce file size and enhance readability.
-	• Actions:
 		• Removed unnecessary parameters (irrelevant for analysis).
 
-Step 3: Comment-Tree Reconstruction and Labeling
+Step 2: Comment-Tree Reconstruction and Labeling
 	• Objective: Restore hierarchical relationships between posts and comments, facilitate identification of data sources.
 	• Actions:
 		• Reinstated hierarchical comment-tree structure.
 		• Added clear labels:
-		• data_type: "post" or "comment"
+		• type: "post" or "comment"
 		• treatment: 0 (control), 1 (treatment)
 		• period: 0 (pre-filter implementation), 1 (post-filter implementation)
 		• Added clear prefixes for parameter sources:
 		• Comment parameters prefixed by "comment_"
 		• Post parameters prefixed by "post_"
 
-Step 4: Merging Treatment and Control Datasets
+Step 3: Merging Treatment and Control Datasets
 	• Objective: Facilitate unified analysis of all relevant data.
 	• Actions:
 		• Merged the two post and two comment datasets into one comprehensive file.
 
-End point: A single merged dataset for further preprocessing.
+	Output: A single merged dataset for further preprocessing.
 
-Step 5: Filtering Mixed Comment Trees and Cross-Period Comments
+Step 4: Filtering Mixed Comment Trees and Cross-Period Comments
 	• Objective: Ensure temporal integrity of data aligned with observation periods.
 	• Actions:
 		• Hard limit approach:
 			• Posts with >15% comments falling outside their respective observation periods or cutoff were excluded entirely.
 			• Posts with ≤15% comments falling outside observation periods had those comments excluded, but the remaining valid comments were retained.
 
-Step 6: Removal of Deleted, Removed, and Moderator Comments
+Step 5: Removal of Deleted, Removed, and Moderator Comments
 	• Objective: Ensure analytical validity by excluding non-discussion content.
 	• Actions:
 		• Filtered out:
@@ -56,12 +50,12 @@ Step 6: Removal of Deleted, Removed, and Moderator Comments
 			• Comments removed by moderators.
 			• Posts that, after this cleaning, resulted in having zero comments remaining.
 
-Step 7: Creation of Author Age Variable
+Step 6: Creation of Author Age Variable
 	• Objective: Provide a robust control variable for analysis.
 	• Actions:
 		• Calculated author_age as the difference (in days) between the comment timestamp (created_utc) and the author account creation date (author_created_utc).
 
-Step 8: Handling Missing and Duplicate Data
+Step 7: Handling Missing and Duplicate Data
 	• Objective: Address incomplete and redundant data entries.
 	• Actions:
 		• Produced detailed overview of missing values across all parameters.
@@ -69,7 +63,7 @@ Step 8: Handling Missing and Duplicate Data
 		• Note: Future researchers should adapt this step according to the specifics of their own datasets.
 		• Checked and removed duplicates if any.
 
-Step 9: Final Parameter Reduction
+Step 8: Final Parameter Reduction
 	• Objective: Retain only essential analytical parameters.
 	• Actions:
 		• Removed parameters no longer needed for analysis:
