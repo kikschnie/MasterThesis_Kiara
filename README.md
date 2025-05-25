@@ -24,7 +24,7 @@ Briefly summarize:
 
 **Methods Overview**
 
-Summarize your methodology (Difference-in-Differences design), treatment and control groups, time windows, and your two primary dependent variable groups:
+Summarizes my methodology (Difference-in-Differences design), treatment and control groups, time windows, and my two primary dependent variable groups:
 
 Dependent Variables
 
