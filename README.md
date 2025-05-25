@@ -83,9 +83,9 @@ Include:
     
 📂 /results and figures
 
-    └── CSV and TXT outputs from regression models
+    └── Regression results
 
-    └── Distribution and parallel trend plots, Q-Q plots, etc.
+    └── Distribution
     
     └── Descriptive Statistics
     
