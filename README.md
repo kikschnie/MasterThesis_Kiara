@@ -73,7 +73,9 @@ Include:
 
 📂 /data
 
-    └── Raw Data files
+    └── Raw Data files in csv format due to file-size upload restrictions. Data can be provided in original .jsonl format if needed.
+    
+    └── Political Discussion Comments.csv, Political Discussion Posts.csv, Moderate Politics Comments.csv, Moderate Politics Posts.csv
     
 📂 /notebooks
 
