@@ -73,7 +73,8 @@ Include:
 
 📂 /data
 
-    └── Raw Data files in csv format due to file-size upload restrictions. Data can be provided in original .jsonl format if needed.
+    └── Raw Data files in csv format due to file-size upload restrictions. Data can be provided in original .jsonl format if needed. Originally sourced at: 		https://github.com/ArthurHeitmann/arctic_shift![image](https://github.com/user-attachments/assets/ffdb33f1-0ea1-47ee-8407-44916f2ba976)
+
     
     └── Political Discussion Comments.csv, Political Discussion Posts.csv, Moderate Politics Comments.csv, Moderate Politics Posts.csv
     
